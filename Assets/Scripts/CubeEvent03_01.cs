@@ -7,6 +7,7 @@ using UnityEngine.Networking;   // UnityWebRequest のための参照
 public class CubeEvent03_01 : MonoBehaviour, IPointerClickHandler
 {
     // アクセスする URL
+    // サーバー URL + /api/get/sample
     string urlGitHub = "ここにサーバーURLを入れる";
 
     public void OnPointerClick(PointerEventData eventData)

@@ -5,23 +5,22 @@ using System.Collections;       // IEnumerator のための参照
 using UnityEngine.Networking;   // UnityWebRequest のための参照
 using System.Text;              // Encoding のための参照
 
-public class CubeEvent03_02 : MonoBehaviour, IPointerClickHandler
+public class Scene04WelcomeMessage : MonoBehaviour
 {
     // アクセスする URL
-    // サーバー URL + /api/post/sample
+    // サーバー URL + /api/post/title
     string urlGitHub = "ここにサーバーURLを入れる";
 
-    public void OnPointerClick(PointerEventData eventData)
+    void Start()
     {
-        // マウスクリックイベント
-        // Debug.Log($"オブジェクト {this.name} がクリックされたよ！");
+        // 起動時にデータを読み込む
 
         // HTTP リクエストを非同期処理を待つためコルーチンとして呼び出す
-        StartCoroutine("PostGitHubData");
+        StartCoroutine("RequestWelcomeMessage");
     }
 
     // リクエストする本体
-    IEnumerator PostGitHubData()
+    IEnumerator RequestWelcomeMessage()
     {
         // HTTP リクエストする(POST メソッド) UnityWebRequest を呼び出し
         // アクセスする先は変数 urlGitHub で設定
@@ -34,6 +33,7 @@ public class CubeEvent03_02 : MonoBehaviour, IPointerClickHandler
         request.downloadHandler = new DownloadHandlerBuffer();
 
         // リクエスト開始
+        Debug.Log("リクエスト開始");
         yield return request.SendWebRequest();
 
         // 結果によって分岐
@@ -49,9 +49,14 @@ public class CubeEvent03_02 : MonoBehaviour, IPointerClickHandler
                 // コンソールに表示
                 Debug.Log($"responseData: {request.downloadHandler.text}");
 
+                // テキストに反映
+                string message = request.downloadHandler.text;
+                this.gameObject.GetComponent<TextMesh>().text = message;
+
                 break;
         }
 
 
     }
+
 }
