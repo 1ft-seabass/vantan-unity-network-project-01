@@ -5,7 +5,7 @@ using System.Collections;       // IEnumerator のための参照
 using UnityEngine.Networking;   // UnityWebRequest のための参照
 using System.Text;              // Encoding のための参照
 
-public class Scene04ClickPart : MonoBehaviour, IPointerClickHandler
+public class Term1_2_Chapter02_ClickPart : MonoBehaviour, IPointerClickHandler
 {
     // アクセスする URL
     // サーバー URL + /api/post/add_point

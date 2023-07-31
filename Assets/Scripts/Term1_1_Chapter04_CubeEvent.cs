@@ -3,22 +3,10 @@ using UnityEngine.EventSystems;
 
 using System.Collections;       // IEnumerator のための参照
 using UnityEngine.Networking;   // UnityWebRequest のための参照
-using System;                   // Serializable のための参照
 
-public class Scene05CubeEvent : MonoBehaviour, IPointerClickHandler
+public class Term1_1_Chapter04_CubeEvent : MonoBehaviour, IPointerClickHandler
 {
-    // JSON データ化する NameData ベースクラス
-    [Serializable]
-    public class NameData
-    {
-        // name というプロパティ名で string 型で変換
-        public string name;
-        // name2 というプロパティ名で string 型で変換
-        public string name2;
-    }
-
     // アクセスする URL
-    // サーバーURL + /api/get/json でアクセス
     string urlGitHub = "ここにサーバーURLを入れる";
 
     public void OnPointerClick(PointerEventData eventData)
@@ -52,12 +40,6 @@ public class Scene05CubeEvent : MonoBehaviour, IPointerClickHandler
 
                 // コンソールに表示
                 Debug.Log($"responseData: {request.downloadHandler.text}");
-
-                // そのうえで ShibaData クラスで JSON データ化
-                NameData nameData = JsonUtility.FromJson<NameData>(request.downloadHandler.text);
-
-                // Title にテキスト割り当て
-                GameObject.Find("Title").GetComponent<TextMesh>().text = nameData.name;
 
                 break;
         }

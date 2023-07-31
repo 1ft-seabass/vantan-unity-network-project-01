@@ -3,11 +3,12 @@ using UnityEngine.EventSystems;
 
 using System.Collections;       // IEnumerator のための参照
 using UnityEngine.Networking;   // UnityWebRequest のための参照
+using System.Text;              // Encoding のための参照
 
-public class CubeEvent03_01 : MonoBehaviour, IPointerClickHandler
+public class Term1_2_Chapter01_CubeEvent02 : MonoBehaviour, IPointerClickHandler
 {
     // アクセスする URL
-    // サーバー URL + /api/get/sample
+    // サーバー URL + /api/post/sample
     string urlGitHub = "ここにサーバーURLを入れる";
 
     public void OnPointerClick(PointerEventData eventData)
@@ -15,16 +16,22 @@ public class CubeEvent03_01 : MonoBehaviour, IPointerClickHandler
         // マウスクリックイベント
         // Debug.Log($"オブジェクト {this.name} がクリックされたよ！");
 
-        // HTTP GET リクエストを非同期処理を待つためコルーチンとして呼び出す
-        StartCoroutine("GetGitHubData");
+        // HTTP リクエストを非同期処理を待つためコルーチンとして呼び出す
+        StartCoroutine("PostGitHubData");
     }
 
-    // GET リクエストする本体
-    IEnumerator GetGitHubData()
+    // リクエストする本体
+    IEnumerator PostGitHubData()
     {
-        // HTTP リクエストする(GET メソッド) UnityWebRequest を呼び出し
+        // HTTP リクエストする(POST メソッド) UnityWebRequest を呼び出し
         // アクセスする先は変数 urlGitHub で設定
-        UnityWebRequest request = UnityWebRequest.Get(urlGitHub);
+        UnityWebRequest request = new UnityWebRequest(urlGitHub, "POST");
+        // 空ではやりとりできないので、今回は仮の dummy 文字を用意
+        byte[] bodyRaw = Encoding.UTF8.GetBytes("dummy");
+        // アップロード（Unity→サーバ）のハンドラを作成
+        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        // ダウンロード（サーバ→Unity）のハンドラを作成
+        request.downloadHandler = new DownloadHandlerBuffer();
 
         // リクエスト開始
         yield return request.SendWebRequest();
