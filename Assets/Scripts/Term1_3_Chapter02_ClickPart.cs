@@ -106,7 +106,7 @@ public class Term1_3_Chapter02_ClickPart : MonoBehaviour, IPointerClickHandler
                 // ResponseData クラスで Unity で扱えるデータ化
                 ResponseData responseData = JsonUtility.FromJson<ResponseData>(request.downloadHandler.text);
 
-                // MessageText に結果テキスト割り当て
+                // StatusMessage に結果テキスト割り当て
                 GameObject.Find("StatusMessage").GetComponent<TextMesh>().text = responseData.result;
 
                 break;
