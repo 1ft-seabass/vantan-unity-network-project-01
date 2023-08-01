@@ -53,7 +53,7 @@ public class Term1_2_Chapter03_CubeEvent : MonoBehaviour, IPointerClickHandler
                 // コンソールに表示
                 Debug.Log($"responseData: {request.downloadHandler.text}");
 
-                // そのうえで ShibaData クラスで JSON データ化
+                // そのうえで NameData クラスで Unity で扱えるデータ化
                 NameData nameData = JsonUtility.FromJson<NameData>(request.downloadHandler.text);
 
                 // Title にテキスト割り当て
