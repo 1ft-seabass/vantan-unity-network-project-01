@@ -9,7 +9,7 @@ public class Term1_4_Chapter02_CubeEvent01 : MonoBehaviour, IPointerClickHandler
 {
     // アクセスする API の URL
     // https://dog.ceo/dog-api/
-    string urlAPI = "https://dog.ceo/api/breeds/image/random";
+    string urlAPI = "";
 
     // 受信した JSON データを Unity で扱うデータにする ResponseData ベースクラス
     [Serializable]

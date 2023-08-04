@@ -8,7 +8,6 @@ using System;                   // Serializable のための参照
 public class Term1_4_Chapter01_CubeEvent01 : MonoBehaviour, IPointerClickHandler
 {
     // アクセスする API の URL
-    // https://www.boredapi.com/
     string urlAPI = "https://www.boredapi.com/api/activity?participants=1";
 
     // 受信した JSON データを Unity で扱うデータにする ResponseData ベースクラス
@@ -23,6 +22,11 @@ public class Term1_4_Chapter01_CubeEvent01 : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         
+    }
+
+    void Update()
+    {
+
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -68,8 +72,4 @@ public class Term1_4_Chapter01_CubeEvent01 : MonoBehaviour, IPointerClickHandler
 
     }
 
-    void Update()
-    {
-        
-    }
 }
