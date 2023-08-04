@@ -25,11 +25,8 @@ public class Term1_3_Chapter02_GetImage : MonoBehaviour, IPointerClickHandler
 
     IEnumerator GetTexture()
     {
-        urlGitHub = "https://tseigo-stunning-funicular-q6vj5g6rx6p347j4-8080.app.github.dev/sample01.png";
-
         // テクスチャを GET リクエストで読み込む。ブラウザでも見れる。
         UnityWebRequest request = UnityWebRequestTexture.GetTexture(urlGitHub);
-
 
         // リクエスト開始
         yield return request.SendWebRequest();
