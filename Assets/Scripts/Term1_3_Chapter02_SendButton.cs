@@ -51,7 +51,6 @@ public class Term1_3_Chapter02_SendButton : MonoBehaviour, IPointerClickHandler
         PointRequestData pointRequestData = new PointRequestData();
         // データを設定
         pointRequestData.point = 1000; // ダミーで 1000 pt のゲーム結果を送る
-        pointRequestData.point = GameObject.Find("ClickPart").GetComponent<Term1_3_Chapter02_ClickPart>().currentPoint;
 
         // 送信データを JsonUtility.ToJson で JSON 文字列を作成
         // pointRequestData の構造に基づいて変換してくれる
