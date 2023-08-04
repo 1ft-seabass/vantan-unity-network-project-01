@@ -69,7 +69,6 @@ public class Term1_3_Chapter02_ClickPart : MonoBehaviour, IPointerClickHandler
         // ResponseData ベースクラスを器として呼び出す
         RequestData requestData = new RequestData();
         // データを設定
-        // requestData.name = "まいねーむ"; // 自分の名前
 
         // 送信データを JsonUtility.ToJson で JSON 文字列を作成
         // pointRequestData の構造に基づいて変換してくれる
