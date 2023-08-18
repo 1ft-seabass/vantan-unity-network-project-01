@@ -41,7 +41,7 @@ public class Term2_1_Chapter03_GetAPI_OK_Sample : MonoBehaviour
     IEnumerator GetData()
     {
         // HTTP リクエストする(GET メソッド) UnityWebRequest を呼び出し
-        // アクセスする先は変数 urlGitHub で設定
+        // アクセスする先は変数 urlAPI で設定
         UnityWebRequest request = UnityWebRequest.Get(urlAPI);
 
         // リクエスト開始
