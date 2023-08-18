@@ -85,8 +85,8 @@ public class Term2_2_Chapter02_SendButton : MonoBehaviour
                 // ResultResponseData クラスで Unity で扱えるデータ化
                 ResultResponseData resultResponse = JsonUtility.FromJson<ResultResponseData>(request.downloadHandler.text);
 
-                // MessageText に結果テキスト割り当て
-                
+                // StatusMessage に結果テキスト割り当て
+
 
                 break;
         }

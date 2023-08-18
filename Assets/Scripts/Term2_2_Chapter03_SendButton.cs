@@ -5,8 +5,9 @@ using System.Collections;       // IEnumerator のための参照
 using UnityEngine.Networking;   // UnityWebRequest のための参照
 using System;                   // Serializable のための参照
 using System.Text;              // Encoding のための参照
+using UnityEngine.UI;           // InputField のための参照
 
-public class Term2_2_Chapter02_SendButton_OK_Sample : MonoBehaviour, IPointerClickHandler
+public class Term2_2_Chapter03_SendButton: MonoBehaviour, IPointerClickHandler
 {
     // 受信した JSON データを Unity で扱うデータにする ResultResponseData ベースクラス
     [Serializable]
@@ -45,13 +46,13 @@ public class Term2_2_Chapter02_SendButton_OK_Sample : MonoBehaviour, IPointerCli
         // アクセスする先は変数 urlGitHub で設定
         UnityWebRequest request = new UnityWebRequest(urlGitHub, "POST");
 
-
         // PointRequestData ベースクラスを器として呼び出す
         PointRequestData pointRequestData = new PointRequestData();
         // データを設定
         // 現在のポイントを得る
-        pointRequestData.point = GameObject.Find("ClickPart").GetComponent<Term2_2_Chapter02_ClickPart>().currentPoint;
+        pointRequestData.point = GameObject.Find("ClickPart").GetComponent<Term2_2_Chapter03_ClickPart>().currentPoint;
         // 自分の名前を登録
+        // 固定値でなく InputField から取得する
         pointRequestData.name = "Seigo";
 
         // 送信データを JsonUtility.ToJson で JSON 文字列を作成
@@ -83,14 +84,18 @@ public class Term2_2_Chapter02_SendButton_OK_Sample : MonoBehaviour, IPointerCli
             case UnityWebRequest.Result.Success:
                 Debug.Log("リクエスト成功");
 
+                // 送信したらリセット
+                GameObject.Find("ClickPart").GetComponent<Term2_2_Chapter03_ClickPart>().ResetPoint();
+
                 // コンソールに表示
                 Debug.Log($"responseData: {request.downloadHandler.text}");
 
                 // ResultResponseData クラスで Unity で扱えるデータ化
                 ResultResponseData resultResponse = JsonUtility.FromJson<ResultResponseData>(request.downloadHandler.text);
 
-                // StatusMessage にランキングを割り当て
-                GameObject.Find("StatusMessage").GetComponent<TextMesh>().text = "登録されました！";
+                // RankingMessage で最新データを取得
+                // GetDataCore を動かす
+                
 
                 break;
         }
