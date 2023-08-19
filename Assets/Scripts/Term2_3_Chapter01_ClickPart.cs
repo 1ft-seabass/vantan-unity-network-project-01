@@ -76,7 +76,7 @@ public class Term2_3_Chapter01_ClickPart : MonoBehaviour, IPointerClickHandler
         // ƒ[ƒ‹‚Í user
         currentMessage.role = "user";
         // ÀÛ‚Ì¿–â
-        currentMessage.content = "Hello!";
+        currentMessage.content = "‚±‚ñ‚É‚¿‚ÍI";
         List<RequestDataMessages> currentMessages = new List<RequestDataMessages>();
         currentMessages.Add(currentMessage);
         requestData.messages = currentMessages;
