@@ -59,7 +59,7 @@ public class Term2_3_Chapter01_ClickPart : MonoBehaviour, IPointerClickHandler
     }
 
     // ChatGPT の API キーを入力
-    public string tokenCHatGPT = "tokenCHatGPT";
+    string tokenCHatGPT = "tokenCHatGPT";
 
     // リクエストする本体
     IEnumerator PostChatGPT()
