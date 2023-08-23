@@ -7,7 +7,7 @@ using System;                   // Serializable のための参照
 using System.Text;              // Encoding のための参照
 
 
-public class Term2_2_Chapter02_SendButton : MonoBehaviour
+public class Term2_2_Chapter02_SendButton : MonoBehaviour, IPointerClickHandler
 {
     // 受信した JSON データを Unity で扱うデータにする ResultResponseData ベースクラス
     [Serializable]
