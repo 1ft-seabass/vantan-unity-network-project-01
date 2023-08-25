@@ -7,7 +7,7 @@ using System;                   // Serializable のための参照
 
 using System.Collections.Generic; // List のための参照
 
-public class Term2_1_Chapter03_GetAPI_OK_Sample : MonoBehaviour
+public class Term2_2_Chapter01_GetAPI_OK_Sample : MonoBehaviour
 {
     // API の接続先
     // 今回は サーバーURL + /api/get を読み込む

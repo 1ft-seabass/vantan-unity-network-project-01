@@ -7,7 +7,7 @@ using System;                   // Serializable のための参照
 
 using System.Collections.Generic; // List のための参照
 
-public class Term2_1_Chapter03_GetAPI : MonoBehaviour
+public class Term2_2_Chapter01_GetAPI : MonoBehaviour
 {
     // API の接続先
     // 今回は サーバーURL + /api/get を読み込む
@@ -18,7 +18,7 @@ public class Term2_1_Chapter03_GetAPI : MonoBehaviour
     [Serializable]
     public class ResponseData
     {
-        
+
     }
 
     void Start()
@@ -66,7 +66,7 @@ public class Term2_1_Chapter03_GetAPI : MonoBehaviour
                 // データを一つずつ反映する
                 for (int i = 0; i < 3; i++)
                 {
-                    
+
                 }
 
                 break;
