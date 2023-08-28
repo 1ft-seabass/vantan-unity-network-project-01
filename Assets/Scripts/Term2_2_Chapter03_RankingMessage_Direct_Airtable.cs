@@ -61,9 +61,6 @@ public class Term2_2_Chapter03_RankingMessage_Direct_Airtable : MonoBehaviour
         StartCoroutine("GetData");
     }
 
-    // アクセスする URL
-    // サーバーURL + /api/get/ranking でアクセス
-    string urlAPI = "";
 
     IEnumerator GetData()
     {
