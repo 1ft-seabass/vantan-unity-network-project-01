@@ -59,9 +59,6 @@ public class Sample05_NextButton_Direct_Airtable : MonoBehaviour, IPointerClickH
 
     void Start()
     {
-        settingAirtableAPIKey = "paty6z2r8DDdzcZxY.3c99576c64aec2660b44f1ac5528c1c06052c528b67efc42a8480cb59b8203ab";
-        settingAirtableBaseID = "app4BXbVOPpDzflNF";
-
         StartCoroutine("GetAPI");
     }
 
